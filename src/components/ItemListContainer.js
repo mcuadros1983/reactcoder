@@ -4,34 +4,26 @@ import ItemList from './ItemList'
 import FetchData from '../utils/FetchData'
 import {useState, useEffect} from 'react'
 
-// const ItemListContainer = ({greeting}) => {
-//   return (
-//     <div>
-//       <p>{greeting}</p>
-//       <ItemCounts></ItemCounts>
-//       <ItemList></ItemList>
-//     </div>
-//   )
-
-// }
-
-function ItemListContainer(){
-  const [state, setState] = useState({items:[]})
+function ItemListContainer({greeting}){
+  const [state, setState] = useState({prod:[]})
   
   useEffect(()=> {
     FetchData(true).then((value)=>{
       setState(value)
+
     }).catch((value)=>{
       setState(value)
     })
   }, [])
     return(
       <div className='App'>
+        <p>{greeting}</p>
+        <ItemCounts></ItemCounts>
         <ItemList items={state}></ItemList>
         
-  
       </div>
-    )
+    ) 
+    
   }
   
   export default ItemListContainer;

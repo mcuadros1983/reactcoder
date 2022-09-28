@@ -1,11 +1,10 @@
 
-const Item = ({
-        id:1,
-        nombre:"costilla",
-        precio:"1800",
-        imagen:"",
-        categoria:"cortes generales"
-})
-
+const Item = ({itemsp})=>{
+        return (
+                <div>
+                        <p>{itemsp}</p>
+                </div>
+        );
+};
 
 export default Item;

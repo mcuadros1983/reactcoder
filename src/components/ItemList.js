@@ -13,16 +13,31 @@
 // export default ItemList
 
 //---------------------------------------------------
+import Item from "./Item";
 
 const ItemList = ({items}) => {
     return (
         <div>
-            <ul>{items.items.map((item,index) => {
+            {items.prod.map((item,index) => {
                 return (
-                    <li key={index}>{item}</li>)
+                    <Item itemsp={item} key={index}></Item>)
                 })}
-            </ul>
         </div>
     )};
 
 export default ItemList
+
+//--------------------------------------------------
+
+// import Item from "./Item";
+
+// const ItemList = ({items}) => {
+//     return (
+//         <div>
+//             <ul>{items.prod.map(u => <Item key={u.id} items={u.nombre}></Item>)
+//                 }
+//             </ul>
+//         </div>
+//     )};
+
+// export default ItemList
