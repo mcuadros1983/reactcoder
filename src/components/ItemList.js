@@ -18,9 +18,12 @@ import Item from "./Item";
 const ItemList = ({items}) => {
     return (
         <div>
-            {items.prod.map((item,index) => {
+            {items.prod.map((item) => {
                 return (
-                    <Item itemsp={item} key={index}></Item>)
+                    <div>
+                        <Item itemsp={item.nombre} key={item.id}></Item>
+                    </div>
+                    )
                 })}
         </div>
     )};
