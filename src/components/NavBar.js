@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './img/logo.jpg';
 import CartWidget from './CartWidget';
-
+import {Link,NavLink} from 'react-router-dom';
 
 function NavBar() {
 
@@ -23,11 +23,23 @@ function NavBar() {
             />
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#inicio"><b>INICIO</b></Nav.Link>
-            <Nav.Link href="#contacto"><b>CONTACTO</b></Nav.Link>
-            <Nav.Link href="#nosotros"><b>NOSOTROS</b></Nav.Link>
-            <Nav.Link href="#lista"><b>LISTA DE PRECIOS</b></Nav.Link>
-            <Nav.Link href="#sucursales"><b>SUCURSALES</b></Nav.Link>
+            <button>
+              <Link to={'/'}>HOME</Link>
+            </button>
+            <button>
+              <Link to={'/prueba1'}>Prueba1</Link>
+            </button>
+            <button>
+              <Link to={'/prueba2'}>Prueba2</Link>
+            </button>
+            <button>
+              <NavLink to={'/items/:id'}>Prueba3</NavLink>
+            </button>
+            {/* <Nav.Link href="#inicio"><b>INICIO</b></Nav.Link>
+            <Nav.Link href="#novillos"><b>CORTES DE NOVILLOS</b></Nav.Link>
+            <Nav.Link href="#cerdos"><b>CORTES DE CERDOS</b></Nav.Link>
+            <Nav.Link href="#elaborados"><b>PRODUCTOS ELABORADOS</b></Nav.Link>
+            <Nav.Link href="#packs"><b>PACKS Y COMBOS</b></Nav.Link> */}
           </Nav>
           <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">

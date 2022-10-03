@@ -1,30 +1,25 @@
-// import { useState } from "react";
-// import Item from "./Item";
-
-
-// function ItemList () {
-//     const [items, setItems] = useState([Item])
-//     return <ul>
-//         {items.map(u=> <li key={u.id}>{u.nombre}</li>)}
-        
-//     </ul>
-// }
-// console.log(Item)
-// export default ItemList
-
-//---------------------------------------------------
 import Item from "./Item";
+import { useParams, NavLink } from 'react-router-dom'
+import {useEffect, useState} from "react"
 
 const ItemList = ({items}) => {
+    
+    const {id} = useParams();
+    const [state, setState] = useState([])
+    
     return (
-        <div>
+        
+        <div className="container d-flex justify-content-center align-items-center h-100">
+            <div className="row">   
             {items.prod.map((item) => {
                 return (
-                    <div>
-                        <Item itemsp={item.nombre} key={item.id}></Item>
+                    <div className="col-md-4" key={item.id}>
+                        <Item itemsp={item}></Item>
+                        
                     </div>
                     )
                 })}
+            </div>
         </div>
     )};
 

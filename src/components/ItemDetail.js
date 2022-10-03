@@ -1,13 +1,11 @@
+
 const ItemDetail = ({details}) => {
     return (
+
         <div>
-            {details.prod.map((detail,key) => {
-                return (
-                        <div>
-                            <p key={detail.id}>El precio del producto es: {detail.precio}</p>
-                        </div>
-                        )
-                })}
+            <p key={details.index}>La descripcion del producto es: {details.nombre}</p>
+            <p key={details.index}>El precio del producto es: ${details.precio}</p>
+            <img src={details.foto} key={details.index}></img>
         </div>
     )};
 

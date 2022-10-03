@@ -1,14 +1,10 @@
-// function FetchData(aux){
+  import costilla from '../components/img/costilla.jpg'
+  import vacio from '../components/img/vacio.webp'
+  import costeleta from '../components/img/costeleta.webp'
+  import chorizocriollo from '../components/img/chorizocriollo.jpg'
 
-    // const prod =  [
-    //   { id:1, nombre: "costilla"},
-    //   { id:2, nombre: "vacio"},
-    //   { id:3, nombre: "cuadril"},
-    //   { id:4, nombre: "chorizo"}
-    //   ];
+  const prod =  [{id:1,nombre:"Costilla",precio:1850, foto:costilla, descripcion:"Costilla de novillo", category:"novillo", categoryId:1},{id:2,nombre:"Vacio",precio:1900,foto:costilla, descripcion:"Vacio de novillo", category:"novillo",categoryId:1},{id:3,nombre:"Costeleta",precio:1650,foto:costeleta,descripcion:"Costeleta de novillo",category:"novillo",categoryId:1},{id:4,nombre:"Chorizo",precio:1750,foto:chorizocriollo,descripcion:"Chorizo Criollo elaboración propia",category:"elaborados",categoryId:2}];
 
-      const prod =  [{id:1,nombre:"costilla",precio:1850},{id:2,nombre:"vacio",precio:1900},{id:3,nombre:"cuadril",precio:1650},{id:4,nombre:"chorizo",precio:1750}];
-    // const prod =  ["costilla","vacio","cuadril","chorizo"];
 
     function FetchData(aux){
     const data = new Promise ((resolve, reject)=>{
@@ -25,6 +21,7 @@
         }
     })
     return data
+
   };
   
   export default FetchData;
