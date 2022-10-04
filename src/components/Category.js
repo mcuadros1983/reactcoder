@@ -8,12 +8,12 @@ import Item from "./Item";
 
 function Category(){
   const [cate,setCate]=useState({prod:[]})
-  const { CateId } = useParams({})
+  const { CateId } = useParams()
 
   useEffect(()=> {
     FetchData(true)
     .then((value)=>{
-        setCate(value.prod.filter(e => e.categoryId == CateId));
+        setCate(value.prod.filter(e => e.categoryId == Number(CateId)));
       console.log(value)
     })
     .catch((error)=>console.log(error))

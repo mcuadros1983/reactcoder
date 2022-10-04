@@ -22,15 +22,15 @@ function NavBar() {
               alt="React Bootstrap logo"
             />
           </Navbar.Brand></Link>
-          <Nav className="me-auto">
+          <Nav className="me-auto"> 
             <NavLink to={'/'}><b>INICIO</b></NavLink>&nbsp;&nbsp;
-            <NavLink to={`category/1`}>TEST</NavLink>
+            <NavLink to={`/category/1`}>TEST</NavLink>
             
             <button>
-              <Link to={'/prueba1'}>Prueba1</Link>
+              <Link to={'/prueba1/'}>Prueba1</Link>
             </button>
             <button>
-              <Link to={'/prueba2'}>Prueba2</Link>
+              <Link to={'/prueba2/'}>Prueba2</Link>
             </button>
             {/* <button>
               <NavLink to={'/items/:id'}>Prueba3</NavLink>
