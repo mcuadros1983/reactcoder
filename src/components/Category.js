@@ -5,26 +5,28 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import Item from "./Item";
 
-function ItemDetailContainer(){
-  const [item,setItem]=useState({})
-  const {id} = useParams()
+
+function Category(){
+  const [cate,setCate]=useState({prod:[]})
+  const { CateId } = useParams({})
 
   useEffect(()=> {
     FetchData(true)
     .then((value)=>{
-      setItem(value.prod.find(element => element.id === Number(id)));
-      
+        setCate(value.prod.filter(e => e.categoryId == CateId));
+      console.log(value)
     })
     .catch((error)=>console.log(error))
   }, [])
     
+  console.log(cate)
     return(
       <div>
-        <Item itemsp={item}/>
+        <ItemDetail details={cate}/>
       </div>
     )
 
 }
 
 
-  export default ItemDetailContainer;
+  export default Category;

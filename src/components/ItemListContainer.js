@@ -3,29 +3,38 @@ import ItemCounts from './ItemCounts'
 import ItemList from './ItemList'
 import FetchData from '../utils/FetchData'
 import {useState, useEffect} from 'react'
-import { useParams, NavLink } from 'react-router-dom'
-import Prueba3 from './Prueba3'
+import { useParams } from 'react-router-dom'
+import Category from './Category'
 
 const ItemListContainer = ({greeting})=> {
   const [state, setState] = useState({prod:[]})
+  // const [cat,setCat]=useState({})
+  // const {CatId} = useParams()
 
-  
   useEffect(()=> {
     FetchData(true).then((value)=>{
       setState(value)
-
     }).catch((value)=>{
       setState(value)
     })
   }, [])
 
+  // useEffect(()=> {
+  //   FetchData(true)
+  //   .then((value)=>{
+  //     setCat(value.prod.find(element => element.categoryId === Number(CatId)));
+      
+  //   })
+  //   .catch((error)=>console.log(error))
+  // }, [])
+
     return(
       <div>
         <p>{greeting}</p>
-        <ItemCounts></ItemCounts>
+        {/* <ItemCounts></ItemCounts> */}
         <ItemList items={state}></ItemList>
-        {/* <Prueba3 test={state}></Prueba3> */}
-        
+        {/* <ItemList items={cat}></ItemList> */}
+        {/* <Category/> */}
       </div>
     ) 
     

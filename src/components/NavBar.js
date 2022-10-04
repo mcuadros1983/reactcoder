@@ -13,7 +13,7 @@ function NavBar() {
     {/* <Navbar bg="light" variant="light"> */}
     <Navbar>
         <Container>
-          <Navbar.Brand href="#home">
+          <Link to={'/'}><Navbar.Brand>
           <img
               src={logo}
               width="110"
@@ -21,22 +21,25 @@ function NavBar() {
               className="d-inline-block align-top"
               alt="React Bootstrap logo"
             />
-          </Navbar.Brand>
+          </Navbar.Brand></Link>
           <Nav className="me-auto">
-            <button>
-              <Link to={'/'}>HOME</Link>
-            </button>
+            <NavLink to={'/'}><b>INICIO</b></NavLink>&nbsp;&nbsp;
+            <NavLink to={`category/1`}>TEST</NavLink>
+            
             <button>
               <Link to={'/prueba1'}>Prueba1</Link>
             </button>
             <button>
               <Link to={'/prueba2'}>Prueba2</Link>
             </button>
-            <button>
+            {/* <button>
               <NavLink to={'/items/:id'}>Prueba3</NavLink>
-            </button>
-            {/* <Nav.Link href="#inicio"><b>INICIO</b></Nav.Link>
-            <Nav.Link href="#novillos"><b>CORTES DE NOVILLOS</b></Nav.Link>
+            </button> */}
+
+            {/* <NavLink to={`items/${itemsp.id}`}><Button variant="primary">Ver descripcion</Button></NavLink> */}
+            
+            
+            {/* <Nav.Link href="#novillos"><b>CORTES DE NOVILLOS</b></Nav.Link>
             <Nav.Link href="#cerdos"><b>CORTES DE CERDOS</b></Nav.Link>
             <Nav.Link href="#elaborados"><b>PRODUCTOS ELABORADOS</b></Nav.Link>
             <Nav.Link href="#packs"><b>PACKS Y COMBOS</b></Nav.Link> */}

@@ -17,7 +17,9 @@ const Item = ({itemsp})=>{
                         <Card.Text>
                         ${itemsp.precio}
                         </Card.Text>
-                        <Button variant="primary">Ver descripcion</Button>
+                        <NavLink to={`items/${itemsp.id}`}><Button variant="primary">Ver descripcion</Button></NavLink>
+                        
+                        {/* <Button variant="primary">Ver descripcion</Button> */}
                         </Card.Body>
                 </Card>
                 

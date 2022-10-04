@@ -28,7 +28,7 @@ function Home() {
       <main>
         {/* <ItemListContainer greeting={'Contenido de greeting pasado a traves de ItemListContainer!!'}/> */}
         <ItemListContainer/><br/><br/><br/><br/>
-        <ItemDetailContainer/>
+  
 
       </main> 
     </div>
