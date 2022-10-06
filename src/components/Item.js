@@ -1,9 +1,8 @@
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import FetchData from '../utils/FetchData'
-import {useState, useEffect} from 'react'
 import { useParams, NavLink } from 'react-router-dom'
+import ItemCounts from './ItemCounts';
 
 const Item = ({itemsp})=>{
         return (
@@ -17,10 +16,10 @@ const Item = ({itemsp})=>{
                         <Card.Text>
                         ${itemsp.precio}
                         </Card.Text>
-                        <NavLink to={`items/${itemsp.id}`}><Button variant="primary">Ver descripcion</Button></NavLink>
-                        
-                        {/* <Button variant="primary">Ver descripcion</Button> */}
+                        <NavLink to={`/items/${itemsp.id}`}><Button variant="primary">Ver descripcion</Button></NavLink><br/><br/>
+                        <ItemCounts></ItemCounts>
                         </Card.Body>
+                        
                 </Card>
                 
         // <div>     

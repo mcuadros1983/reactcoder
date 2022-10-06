@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 const ItemCounts = ()=>{
   const [myState,setMyState] = useState(0); 
@@ -30,15 +31,11 @@ const ItemCounts = ()=>{
 
   return(
     <React.Fragment>
-      
-      <button onClick={() => cambioContador('suma')}>
-        +
-      </button>&nbsp;&nbsp;
+      <Button onClick={() => cambioContador('suma')} variant="secondary">+</Button>&nbsp;&nbsp;
       <span>{myState}</span>&nbsp;&nbsp;
-      <button onClick={() => cambioContador('resta')}>
-        -
-      </button>&nbsp;&nbsp;
-      <button onClick={() => stock(30)}>Agregar al carrito</button>
+      <Button onClick={() => cambioContador('resta')} variant="secondary">-</Button>&nbsp;&nbsp;
+      <Button onClick={() => stock(30)} variant="secondary">Agregar al carrito</Button>
+      
     </React.Fragment>
   );
 }
