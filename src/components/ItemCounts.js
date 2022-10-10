@@ -1,10 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import '../App.css';
 
-const ItemCounts = ()=>{
+const ItemCounts = ({show, onClick})=>{
   const [myState,setMyState] = useState(0); 
   
+  function getClassName(mostrar) {
+    if (mostrar) {
+      return 'mostrar';
+    }else{
+     return 'borrar';
+    }
+  }
 
   function cambioContador(value) {
     if (value === 'suma') {
@@ -15,14 +23,14 @@ const ItemCounts = ()=>{
     }
   }
   
-  function stock(value){
+  function stock(valor){
     // let stock = 20;
 
     function onAdd() {
       let resultado= alert("se han agregado correctamente " + myState + " elementos al carrito");
       }
 
-    if (myState<=value){
+    if (myState<=valor){
       onAdd()
     } else {
       alert("no existe stock suficiente para agregar al carrito")
@@ -31,11 +39,12 @@ const ItemCounts = ()=>{
 
   return(
     <React.Fragment>
-      <Button onClick={() => cambioContador('suma')} variant="secondary">+</Button>&nbsp;&nbsp;
-      <span>{myState}</span>&nbsp;&nbsp;
-      <Button onClick={() => cambioContador('resta')} variant="secondary">-</Button>&nbsp;&nbsp;
-      <Button onClick={() => stock(30)} variant="secondary">Agregar al carrito</Button>
-      
+      <div className={getClassName(show)} >
+        <Button onClick={() => cambioContador('suma')} variant="secondary">+</Button>&nbsp;&nbsp;
+        <span>{myState}</span>&nbsp;&nbsp;
+        <Button onClick={() => cambioContador('resta')} variant="secondary">-</Button>&nbsp;&nbsp;
+        <Button onClick={()=>onClick(show)} variant="secondary" >Agregar al carrito</Button>
+      </div>
     </React.Fragment>
   );
 }

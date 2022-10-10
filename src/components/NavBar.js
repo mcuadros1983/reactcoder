@@ -10,7 +10,6 @@ function NavBar() {
 
   return (
     <>
-    {/* <Navbar bg="light" variant="light"> */}
     <Navbar >
         <Container>
           <Link to={'/'}><Navbar.Brand>
@@ -41,3 +40,5 @@ function NavBar() {
 }
 
 export default NavBar;
+
+

@@ -13,14 +13,12 @@ function ItemDetailContainer(){
     FetchData(true)
     .then((value)=>{
       setItem(value.prod.find(element => element.id === Number(id)));
-      
     })
     .catch((error)=>console.log(error))
   }, [])
-    
     return(
       <div>
-        <Item itemsp={item}/>
+        <ItemDetail details={item}/>
       </div>
     )
 
