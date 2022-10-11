@@ -2,11 +2,15 @@ import React, {useContext} from 'react'
 import Contexts from './Contexts'
 
 function Consumer3() {
-    const {contexto,getFromCache, cartList, addToCart, removeList, deleteItem} = useContext(Contexts.cartContext)
-
+    const {contexto, test} = useContext(Contexts.cartContext)
+    console.log(test)
   return (
             <>
-                <p>{getFromCache}</p>
+                {test.map((value)=>(
+                    <>
+                        <p key={value.index}>{value}</p>
+                    </>
+                ))}  
             </>
   )
 }

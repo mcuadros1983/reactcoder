@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import CartContext from './context/CartContext';
 import Consumer2 from './context/Consumer2';
+import Consumer3 from './context/Consumer3';
 import Cart from './components/Cart';
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
         <Route exact path='/carrito' element={
           <Consumer2>
           </Consumer2>}/>
+        {/* <Route exact path='/carrito3' element={
+          <Consumer3>
+          </Consumer3>}/> */}
       </Routes>
       </CartContext>
 
