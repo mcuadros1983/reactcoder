@@ -1,18 +1,29 @@
 import React, {useContext} from 'react'
+import { Button } from 'react-bootstrap'
 import Contexts from './Contexts'
+import Item from '../components/Item'
 
-function Consumer3() {
-    const {contexto, test} = useContext(Contexts.cartContext)
-    console.log(test)
+export  default function Consumer3() {
+    const {contexto,removeList} = useContext(Contexts.cartContext)
+    console.log(contexto.value)
+    console.log(contexto.value.length)
   return (
-            <>
-                {test.map((value)=>(
-                    <>
-                        <p key={value.index}>{value}</p>
-                    </>
-                ))}  
-            </>
+            <div>
+                
+                {contexto.value.length ? 
+                (contexto.value.map((valor)=>(
+                    <div>
+                        <p key={valor.id}>{valor.nombre}</p>
+                        <img key={valor.nombre} src={valor.foto}></img>
+
+                    </div>
+                ))):(
+                    <h3>No hay registros</h3>
+                )}  
+                
+                {contexto.value.length>0 && (
+                    <Button onClick={removeList}>Cancelar</Button>
+                )}
+            </div>
   )
 }
-
-export default Consumer3

@@ -27,7 +27,7 @@ const ItemCounts = ({show, onClick})=>{
     // let stock = 20;
 
     function onAdd() {
-      let resultado= alert("se han agregado correctamente " + myState + " elementos al carrito");
+      alert("se han agregado correctamente " + myState + " elementos al carrito");
       }
 
     if (myState<=valor){

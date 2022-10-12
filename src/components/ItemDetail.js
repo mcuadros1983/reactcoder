@@ -8,7 +8,8 @@ import Contexts from "../context/Contexts";
 const ItemDetail = ({details}) => {
     let navigate =useNavigate()
     //inicializacion del contexto
-    const context = useContext(Contexts.cartContext)
+    // const {Prueba} = useContext(Contexts.cartContext)
+    const {context, addToCart} = useContext(Contexts.cartContext)
     const [detalle, setDetalle] = useState(true)
 
 function onAdd(show){
@@ -16,16 +17,16 @@ function onAdd(show){
     setDetalle(change);
 }
 
-function handleCheckOut(e){
-    if(context.value.includes(details)){
-        alert("Ya existe el elemento " + details.nombre + ' en el carrito')
-      }else{
-        // modifica el contexto con lo que ya tenias antes, mas mi estado
-        context.func([...context.value, details])
-        console.log(context.value)
-        navigate("/carrito")
-      }
-}
+// function handleCheckOut(e){
+//     if(context.value.includes(details)){
+//         alert("Ya existe el elemento " + details.nombre + ' en el carrito')
+//       }else{
+//         // modifica el contexto con lo que ya tenias antes, mas mi estado
+//         context.func([...context.value, details])
+//         console.log(context.value)
+//         navigate("/carrito")
+//       }
+// }
     return (
 
         <div className="text-center">
@@ -34,8 +35,9 @@ function handleCheckOut(e){
             <img src={details.foto} key={details.index}></img><br/><br/>
             <div>
                <ItemCounts show={detalle} onClick={onAdd}></ItemCounts><br/><br/>
-               <Button onClick={handleCheckOut}>CHECKOUT</Button>
-        
+               {/* <Button onClick={handleCheckOut}>CHECKOUT</Button> */}
+               <Button onClick={()=>addToCart(details)}>CHECKOUT</Button>
+                
             </div>
         </div>
     )};

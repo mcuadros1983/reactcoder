@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import CartContext from './context/CartContext';
-import Consumer2 from './context/Consumer2';
 import Consumer3 from './context/Consumer3';
 import Cart from './components/Cart';
 
@@ -22,11 +21,8 @@ function App() {
         <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
         <Route exact path='/items/:id' element={<ItemDetailContainer/>}/>    
         <Route exact path='/carrito' element={
-          <Consumer2>
-          </Consumer2>}/>
-        {/* <Route exact path='/carrito3' element={
           <Consumer3>
-          </Consumer3>}/> */}
+          </Consumer3>}/>
       </Routes>
       </CartContext>
 
