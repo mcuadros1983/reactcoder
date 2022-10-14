@@ -1,10 +1,9 @@
 import React, {useContext} from 'react'
 import { Button } from 'react-bootstrap'
 import Contexts from './Contexts'
-import Item from '../components/Item'
 
 export  default function Consumer3() {
-    const {contexto,removeList} = useContext(Contexts.cartContext)
+    const contexto = useContext(Contexts.cartContext)
     console.log(contexto.value)
     console.log(contexto.value.length)
   return (
@@ -12,17 +11,19 @@ export  default function Consumer3() {
                 
                 {contexto.value.length ? 
                 (contexto.value.map((valor)=>(
-                    <div>
-                        <p key={valor.id}>{valor.nombre}</p>
-                        <img key={valor.nombre} src={valor.foto}></img>
+                    <div key={valor.id} >
+                        <p >{valor.nombre}</p>
+                        <img  src={valor.foto}></img>&nbsp;&nbsp;
+                        <Button  onClick={()=>contexto.deleteItem(valor)}>Eliminar Item</Button>
 
                     </div>
                 ))):(
                     <h3>No hay registros</h3>
-                )}  
+                )}  <br/><br/>
                 
                 {contexto.value.length>0 && (
-                    <Button onClick={removeList}>Cancelar</Button>
+                    <Button onClick={contexto.removeList}>Cancelar</Button>
+
                 )}
             </div>
   )

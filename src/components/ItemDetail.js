@@ -1,6 +1,6 @@
 import ItemCounts from "./ItemCounts";
 import '../App.css';
-import { useState, useContext } from 'react'; 
+import { useState, useContext, useEffect } from 'react'; 
 import { Button } from "react-bootstrap";
 import {useNavigate, NavLink} from 'react-router-dom';
 import Contexts from "../context/Contexts";
@@ -8,25 +8,22 @@ import Contexts from "../context/Contexts";
 const ItemDetail = ({details}) => {
     let navigate =useNavigate()
     //inicializacion del contexto
-    // const {Prueba} = useContext(Contexts.cartContext)
     const {context, addToCart} = useContext(Contexts.cartContext)
     const [detalle, setDetalle] = useState(true)
+    const [qty,setQty] = useState(0)
 
-function onAdd(show){
-    const change = !show
-    setDetalle(change);
+    
+function handleChange(test){
+    setQty(test)
 }
+console.log(qty)
 
-// function handleCheckOut(e){
-//     if(context.value.includes(details)){
-//         alert("Ya existe el elemento " + details.nombre + ' en el carrito')
-//       }else{
-//         // modifica el contexto con lo que ya tenias antes, mas mi estado
-//         context.func([...context.value, details])
-//         console.log(context.value)
-//         navigate("/carrito")
-//       }
+// function onAdd(show){
+//     const change = !show
+//     setDetalle(change);
 // }
+
+
     return (
 
         <div className="text-center">
@@ -34,8 +31,7 @@ function onAdd(show){
             <p key={details.index}>El precio del producto es: ${details.precio}</p>
             <img src={details.foto} key={details.index}></img><br/><br/>
             <div>
-               <ItemCounts show={detalle} onClick={onAdd}></ItemCounts><br/><br/>
-               {/* <Button onClick={handleCheckOut}>CHECKOUT</Button> */}
+               <ItemCounts show={detalle} onAdd={handleChange} initial="5"></ItemCounts><br/><br/>
                <Button onClick={()=>addToCart(details)}>CHECKOUT</Button>
                 
             </div>
