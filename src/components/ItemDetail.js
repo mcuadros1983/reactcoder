@@ -14,16 +14,8 @@ const ItemDetail = ({details}) => {
 
     
 function handleChange(test){
-    setQty(test)
+    setQty(parseInt(test))
 }
-console.log(qty)
-
-// function onAdd(show){
-//     const change = !show
-//     setDetalle(change);
-// }
-
-
     return (
 
         <div className="text-center">
@@ -31,8 +23,8 @@ console.log(qty)
             <p key={details.index}>El precio del producto es: ${details.precio}</p>
             <img src={details.foto} key={details.index}></img><br/><br/>
             <div>
-               <ItemCounts show={detalle} onAdd={handleChange} initial="5"></ItemCounts><br/><br/>
-               <Button onClick={()=>addToCart(details)}>CHECKOUT</Button>
+               <ItemCounts item={details} show={detalle} onAdd={handleChange} initial="1"></ItemCounts><br/><br/>
+               {/* <Button onClick={()=>addToCart(details,qty)}>CHECKOUT</Button> */}
                 
             </div>
         </div>
