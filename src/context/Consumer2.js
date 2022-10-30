@@ -9,7 +9,7 @@ function Consumer2() {
                 {contexto.value.map((value)=>(
                     <>
                         <p key={value.id}>{value.nombre}</p>
-                        <img key={value.nombre} src={value.foto}></img>
+                        <img key={value.nombre} src={value.img}></img>
                     </>
                 ))}  
             </>

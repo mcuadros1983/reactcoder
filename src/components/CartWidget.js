@@ -10,7 +10,7 @@ const CartWidget = () => {
   return (
     <>
         {contexto.pendientes() >0 && (
-        <Link to={'/carrito'} style={{ textDecoration: 'none' }}>
+        <Link to={'/cart'} style={{ textDecoration: 'none' }}>
             <FontAwesomeIcon icon={faCartShopping}/>&nbsp;&nbsp;
             <span>{contexto.pendientes()} Items</span>
         </Link>

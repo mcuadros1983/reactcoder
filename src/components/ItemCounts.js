@@ -5,7 +5,7 @@ import Contexts from '../context/Contexts';
 import '../App.css';
 import {useNavigate, NavLink} from 'react-router-dom';
 
-const ItemCounts = ({show, initial, onAdd, item, onClick})=>{
+const ItemCounts = ({show, initial, onAdd, item, onClick, onCheck})=>{
   const contexto = useContext(Contexts.cartContext)
   const [myState,setMyState] = useState(parseInt(initial)); 
   let navigate =useNavigate()
@@ -25,23 +25,6 @@ const ItemCounts = ({show, initial, onAdd, item, onClick})=>{
   const navigateCarrito = () => {
       navigate("/carrito")
   };
-
-  // useEffect(() => {
-  //   onAdd(myState)
-  // }, [myState])
-  
-  // const handleOnChange  = ()=>{
-  //   onAdd(myState)
-
-  //   }
-
-  // function getClassName(mostrar) {
-  //   if (mostrar) {
-  //     return 'mostrar';
-  //   }else{
-  //    return 'borrar';
-  //   }
-  // }
   
   return(
     <React.Fragment>
@@ -51,11 +34,12 @@ const ItemCounts = ({show, initial, onAdd, item, onClick})=>{
         <span>{myState}</span>&nbsp;&nbsp;
         <Button onClick={() => cambioContador('resta')} variant="secondary">-</Button>&nbsp;&nbsp;
         <Button onClick={()=> {contexto.addToCart(item,myState);}} variant="secondary" >Agregar al carrito</Button><br/><br/>
-        
-        {contexto.pendientes() >0 && (
+
+ 
+        {/* {contexto.pendientes() >0 && (
           // <Button onClick={()=>addToCart(item,myState)}>CHECKOUT</Button>
-          <Button onClick={navigateCarrito}>CHECKOUT</Button>
-        )} 
+          <Button onClick={onCheck}>CHECKOUT</Button>
+        )}  */}
 
       </div>
     </React.Fragment>

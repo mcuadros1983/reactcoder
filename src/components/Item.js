@@ -6,8 +6,9 @@ import ItemCounts from './ItemCounts';
 
 const Item = ({itemsp})=>{
         return (
+                <>
                 <Card style={{ width: '18rem' , margin:10 }}>
-                        <Card.Img variant="top" src={itemsp.foto}/>
+                        <Card.Img variant="top" src={itemsp.img} alt={itemsp.descripcion} width='200' />
                         <Card.Body>
                         <Card.Title>{itemsp.nombre}</Card.Title>
                         <Card.Text>
@@ -20,34 +21,7 @@ const Item = ({itemsp})=>{
                         </Card.Body>
                         
                 </Card>
+                </>
                 
-        // <div>     
-        // <Container>
-        //         {/* <p>{itemsp.precio}</p>
-        //         <p>{itemsp.nombre}</p> */}
-        //         {/* <div style="float: right;">
-        //         </div>  */}
-        //         <Row>
-
-        //         <Col >
-        //                 <Card style={{ width: '18rem' }}>
-        //                 <Card.Img variant="top" src={itemsp.foto} />
-        //                 <Card.Body>
-        //                         <Card.Title>{itemsp.nombre}</Card.Title>
-        //                         <Card.Text>
-        //                         {itemsp.descripcion}
-        //                         </Card.Text>
-        //                         <Card.Text>
-        //                         ${itemsp.precio}
-        //                         </Card.Text>
-        //                         <Button variant="primary">Ver detalle</Button>
-        //                 </Card.Body>
-        //                 </Card>
-        //         </Col>
-
-
-        //         </Row>
-        // </Container>
-        // </div>
-        )};
+                      )};
 export default Item;

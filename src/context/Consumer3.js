@@ -17,7 +17,7 @@ export  default function Consumer3() {
                         <p >Cantidad: {valor.qty}</p>
                         <p >Precio unitario: ${valor.precio}</p>
                         <p>Monto del Item: $ {valor.precio * valor.qty}</p>
-                        <img  src={valor.foto}></img>&nbsp;&nbsp;
+                        <img  src={valor.img}></img>&nbsp;&nbsp;
                         <Button  onClick={()=>contexto.deleteItem(valor)}>Eliminar Producto</Button>
 
                     </div>
