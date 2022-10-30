@@ -14,10 +14,6 @@ const CartWidget = () => {
             <FontAwesomeIcon icon={faCartShopping}/>&nbsp;&nbsp;
             <span>{contexto.pendientes()} Items</span>
         </Link>
-        // <a href='/carrito' style={{ textDecoration: 'none' }}>
-        //     <FontAwesomeIcon icon={faCartShopping}/>&nbsp;&nbsp;
-        //     <span>{contexto.pendientes()} Items</span>
-        // </a> 
         )} 
     </>  
   )

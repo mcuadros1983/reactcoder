@@ -1,15 +1,14 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './img/logo.jpg';
 import CartWidget from './CartWidget';
 import {Link,NavLink} from 'react-router-dom';
-import Contexts from '../context/Contexts';
 
 
 function NavBar() {
-  const contexto = useContext(Contexts.cartContext)
+
 
   return (
     <>
@@ -33,12 +32,7 @@ function NavBar() {
           <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text>
-                     {/* {contexto.value.length>0 && (
-                    <CartWidget/>)} */}
-                    
                     <CartWidget/>
-                    
-
                 </Navbar.Text>
             </Navbar.Collapse>
         </Container>

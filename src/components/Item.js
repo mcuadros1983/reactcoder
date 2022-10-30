@@ -1,8 +1,6 @@
-
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useParams, NavLink } from 'react-router-dom'
-import ItemCounts from './ItemCounts';
+import { NavLink } from 'react-router-dom'
 
 const Item = ({itemsp})=>{
         return (
